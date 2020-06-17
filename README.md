@@ -1,27 +1,73 @@
 
 
 ![cover_photo](./6_README_files/cover_photo.png)
-# Lending Club Loan Interest Rate 
+
+
+
+
+
+## 1. Problem Identification
+
+#### 1.1. Background: Lending Club
 
 *[LendingClub](https://www.lendingclub.com/) is an American peer-to-peer lending company, headquartered in San Francisco, California. It was the first peer-to-peer lender to register its offerings as securities with the Securities and Exchange Commission (SEC), and to offer loan trading on a secondary market. LendingClub is the world's largest peer-to-peer lending platform. The company claims that $15.98 billion in loans had been originated through its platform up to December 31, 2015.
 
 LendingClub enables borrowers to create unsecured personal loans between $1,000 and $40,000. The standard loan period is three years. Investors can search and browse the loan listings on LendingClub website and select loans that they want to invest in based on the information supplied about the borrower, amount of loan, loan grade, and loan purpose. Investors make money from interest. LendingClub makes money by charging borrowers an origination fee and investors a service fee.[Company Wiki Page](https://en.wikipedia.org/wiki/LendingClub)*
 
-## 1. Data
+#### 1.2 Problem Statement
+
+In this capstone project, our goal is to create a loan interest rate generator based on the characteristics on each loan. 
+
+
+## 2. Data Wrangling
+
+#### 2.1. Data Collection
 
 The dataset contains loan data for all loans issued through the 2007-2015, including the current loan status (Current, Late, Fully Paid, etc.) and latest payment information. The file containing loan data through the "present" contains complete loan data for all loans issued through the previous completed calendar quarter. Additional features include credit scores, number of finance inquiries, address including zip codes, and state, and collections among others. The file is a matrix of about 890 thousand observations and 75 variables. The datast is acquired through the Kaggle API by clicking on the links below:
 
 
 > * [Kaggle Dataset](https://www.kaggle.com/wendykan/lending-club-loan-data)
 
+#### 2.2. Data Definition
 
-## 2. Method
+we investigate the below features with the help of info(), describe(), and panda profiling. 
+
+    1.	Column Name
+    2.	Data Type (numeric, categorical, timestamp, etc)
+    3.	Description of Column
+    4.	Count or percent per unique values or codes (including NA)
+    5.	The range of values or codes
+
+
+## 3. Data Cleaning
+
+* **Problem 1:** Handling missing data. **Solution:** use fillna() to imputate the missing value with its mean, median or mode. In some cases, just replace the missing data with zeros.
+
+* **Problem 2:** Removing duplicates. **Solution:** use the built in Pandas DataFrame function drop_duplicates(). 
+
+
+## 4. Exploratory Data Analysis
+
+
+
+
+## 5. Pre-processing and Training Data Development
+
+•	Create dummy or indicator features for categorical variables
+•	Standardize the magnitude of numeric features: minmax or standard scaler 
+•	Split into testing and training datasets: 
+
+
+
+## 6. Modeling
+
+#### 6.1. Method
 
 There are two main types of regression models:
 
-1. **Simple Regression:** 
+1. **Simple Regression:** Use for linear data.
 
-2. **Ensemble Methods :** Random Forest Regression.
+2. **Ensemble Methods :** Random Forest Regression. If the data is nonlinear, Ensemble Method generates better predictions.
 
 ![](./6_README_files/matrix_example.png)
 
@@ -29,27 +75,11 @@ There are two main types of regression models:
 **WINNER:Random Forest Regression** 
 
 
-I choose to work with a user-based collaborative filtering system. This made the most sense because half of the 4 million user-entered climbs had an explicit rating of how many stars the user would rate the climb. Unfortunately, the data did not have very detailed "item features". Every rock climbing route had an area, a difficulty grade, and a style of climbing (roped or none). This would not have been enough data to provide an accurate content-based recommendation. In the future, I would love to experiment using a hybrid system to help solve the problem of the cold-start-threshold.
+I choose Random Forest Regressor to accomodate the nonlinear nature of the dataset.
 
-## 3. Data Cleaning 
 
-[Data Cleaning Report](https://drive.google.com/open?id=195wcooDtT2XhfpRXREWmLovm8XZPNymy)
 
-In a collaborative-filtering system there are only three columns that matter to apply the machine learning algorithms: the user, the item, and the explicit rating (see the example matrix above). I also had to clean & normalize all the reference information (location, difficulty grade, etc.) to the route so that my user could get a useful and informative recommendation.
 
-* **Problem 1:** This dataset is all user-entered information. There are a couple drop down options, but for the most part the user is able to completely make-up, or list something incorrectly. **Solution:** after normalizing & cleaning all the columns, I created a three-tier groupby system that I could then take the mode of each entry and fill in the column with that mode. For example: a route listed 12 times had the country Greece associated with it 11 times, but one person incorrectly listed it located in the USA. By grouping together three other indicator columns and then computing the mode of the country, I was able to catch and change some of the user-entered errors and increase the accuracy of my dataset.
-
-* **Problem 2:** Being this is an international rock climbing website, the names of the rock climbing routes were differing based on if the user enters accent marks or not. **Solution:** normalize all names to the ascii standards. 
-
-* **Problem 3:** Spelling issues with the route name. For example: if there was a route named "red rocks canyon" it could be spelled "red rock", "red rocks", "red canyon" etc. **Solution:** at first, I was hopeful and tried two different phonetic spelling algorithms (soundex & double metahpone). However, both of these proved to be too aggressive in their grouping and sometimes would group together up to 20 different individual routes as the same item! My final solution was to create an accurate filter for route names. The logic being that if up to x number of users all entered that *exact same* route name, the chances were good that it was an actual route spelled correctly. I played around with 4 different filters and kept these until I could test their prediction accuracy in the ML portion. I found the greatest prediction accuracy came from the dataset that filtered out any routes listed less than 6 times.
-
-## 4. EDA
-
-[EDA Report](https://colab.research.google.com/drive/14AKVsyXy7yJSxBjmEBFyz7kEX7e9ioM_)
-
-* The star-rating distributions all checked out to be normal. It is very common with explicit ratings to see a diminished number of low ratings.
-
-![](./6_README_files/star_counts.png)
 
 ## 5. Algorithms & Machine Learning
 
