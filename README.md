@@ -12,7 +12,7 @@ LendingClub enables borrowers to create unsecured personal loans between $1,000 
 
 #### 1.2 Problem Statement
 
-In this capstone project, my goal is to create a loan interest rate generator based on the characteristics on each loan. 
+In this capstone project, my goal is to create an interest rate generator for unsecured personal loans issued by Lending Club based on the characteristics on each loan. 
 
 
 ## 2. Data Wrangling
@@ -44,9 +44,11 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ## 4. Exploratory Data Analysis
 
-![Correlation Matrix](./corr_matrix.png)
+* **Boxplot:** Visualizing outliers
+![Boxplot for Visulaizing Outlier](./Capstone2boxplot.png)
 
-![EDA](./Pandas Profiling.htm)
+* **Heatmap:** Visualizing correlations
+![Heatmap for Correlations](./)
    
 
 ## 5. Pre-processing and Training Data Development
