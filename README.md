@@ -1,4 +1,4 @@
-![cover_photo](./6_README_files/cover_photo.png)
+![cover_photo](./LC-Logo-Official-min-1024x418.png)
 
 
 
