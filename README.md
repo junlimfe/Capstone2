@@ -48,7 +48,7 @@ I investigated the below features with the help of info(), describe(), and panda
 ![Boxplot for Visulaizing Outlier](./Capstone2boxplot.png)
 
 * **Heatmap:** Visualizing correlations
-![Heatmap for Correlations](./)
+![Heatmap for Correlations](./Capstone2Pearson.png)
    
 
 ## 5. Pre-processing and Training Data Development
