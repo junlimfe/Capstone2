@@ -66,17 +66,29 @@ There are two main types of regression models:
 
 1. **Simple Regression:** Use for linear data.
 
-2. **Ensemble Methods :** Random Forest Regression. If the data is nonlinear, Ensemble Method generates better predictions.
+2. **Random Forest Regressor:** Random Forest Regression. If the data is nonlinear, Ensemble Method generates better predictions.
+
+3. **Random Forest Regressor XGboost:**
+
+4. **SVM:**
 
 **WINNER:Random Forest Regression** 
 
 I chose Random Forest Regressor to accomodate the nonlinear nature of the dataset.
 
-#### Grid Search Cross Validation
+#### 6.2. Model Evaluation Metrics
+>***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors. Thus, the RMSE is useful when large errors are undesirable. The smaller the RMSE, the more accurate the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
+
+
+#### 6.3. Hyperparameter Tuning
+
+###### 6.3.1. Grid Search Cross Validation
 
 I chose to work with the GridSearchCV in sklearn model selection package for training my interest rate model. I varied the n_estimators from 100 to 1100 at the interval of 100. In the end, the best parameter for n_estimators is 500. 
 
->***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors. Thus, the RMSE is useful when large errors are undesirable. The smaller the RMSE, the more accurate the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
+###### 6.3.2. Bayesian Optimization
+
+
 
 
 ## 7. Future Improvements
