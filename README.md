@@ -12,7 +12,7 @@ LendingClub enables borrowers to create unsecured personal loans between $1,000 
 
 #### 1.2 Problem Statement
 
-In this capstone project, our goal is to create a loan interest rate generator based on the characteristics on each loan. 
+In this capstone project, my goal is to create a loan interest rate generator based on the characteristics on each loan. 
 
 
 ## 2. Data Wrangling
@@ -26,7 +26,7 @@ The dataset contains loan data for all loans issued through the 2007-2015, inclu
 
 #### 2.2. Data Definition
 
-We investigate the below features with the help of info(), describe(), and panda profiling. 
+I investigated the below features with the help of info(), describe(), and panda profiling. 
 
     1.	Column Name
     2.	Data Type (numeric, categorical, timestamp, etc)
@@ -68,14 +68,11 @@ There are two main types of regression models:
 
 **WINNER:Random Forest Regression** 
 
-I choose Random Forest Regressor to accomodate the nonlinear nature of the dataset.
-
+I chose Random Forest Regressor to accomodate the nonlinear nature of the dataset.
 
 #### Grid Search Cross Validation
 
-I chose to work with the GridSearchCV in sklearn model selection package for training my interest rate model. I varied the n_estimators from 100 to 1100 at the interval of 100.. In the end, the best parameter for n_estimators is 500. 
-
-![](./6_README_files/algo.png)
+I chose to work with the GridSearchCV in sklearn model selection package for training my interest rate model. I varied the n_estimators from 100 to 1100 at the interval of 100. In the end, the best parameter for n_estimators is 500. 
 
 >***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors. Thus, the RMSE is useful when large errors are undesirable. The smaller the RMSE, the more accurate the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
 
