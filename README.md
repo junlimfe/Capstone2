@@ -51,9 +51,9 @@ We investigate the below features with the help of info(), describe(), and panda
 
 ## 5. Pre-processing and Training Data Development
 
-•	Create dummy or indicator features for categorical variables
-•	Standardize the magnitude of numeric features: minmax or standard scaler 
-•	Split into testing and training datasets: 
+    •	Create dummy or indicator features for categorical variables
+    •	Standardize the magnitude of numeric features: minmax or standard scaler
+    •	Split into testing and training datasets
 
 
 ## 6. Modeling
