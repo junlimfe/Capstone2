@@ -66,11 +66,6 @@ There are two main types of regression models:
 
 2. **Ensemble Methods :** Random Forest Regression. If the data is nonlinear, Ensemble Method generates better predictions.
 
-![](./6_README_files/matrix_example.png)
-
-![](./6_README_files/matrix_example.png)
-
-
 **WINNER:Random Forest Regression** 
 
 I choose Random Forest Regressor to accomodate the nonlinear nature of the dataset.
