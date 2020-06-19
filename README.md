@@ -62,7 +62,7 @@ I investigated the below features with the help of info(), describe(), and panda
 
 #### 6.1. Method
 
-There are two main types of regression models:
+There are three main types of regression models:
 
 1. **Simple Regression:** Use for linear data.
 
