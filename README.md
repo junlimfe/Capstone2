@@ -102,8 +102,9 @@ Here I was able to apply a set of parameters to search through. As a result of t
 
 Method | RMSE
 ------------ | -------------
-Random Forest Regressor| 
-Random Forest Regressor XGboost | 
+Random Forest Regressor| 1.3959306170693693
+Random Forest Regressor XGB | 2.347896772001473
+Random Forest Regressor XGB with Randomized Search CV | 1.281564628227814
 
 >***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which penalizes large errors more. Thus, the RMSE is more desirable when the large errors are unacceptable. The lower the RMSE, the better the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
 
