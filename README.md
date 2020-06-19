@@ -70,7 +70,7 @@ There are two main types of regression models:
 
 3. **Random Forest Regressor XGboost:**
 
-**WINNER:Random Forest Regression** 
+**WINNER:Random Forest Regressor** 
 
 I chose Random Forest Regressor XGboost to accomodate the nonlinear nature of the dataset.
 
@@ -100,20 +100,20 @@ Here I was able to apply a set of parameters to search through. As a result of t
 
 *RMSE : squared root of the mean of the squared errors.
 
-First Header | Second Header
+Method | RMSE
 ------------ | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+Random Forest Regressor| 
+Random Forest Regressor XGboost | 
 
 >***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which penalizes large errors more. Thus, the RMSE is more desirable when the large errors are unacceptable. The lower the RMSE, the better the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
 
 ## 7. Future Improvements
 
-* SVM
+* SVM: use Kernel Trick along with other hyperparameter tuning to evaluate the accuracy of the model with respect to the aforementioned methods. 
 
-* Bayesian Optimization 
+* Bayesian Optimization: compare the efficacy and efficiency using Bayesian Optimizaiton to Randomized Search Cross Validation.
 
-* Due to RAM constraints, I had to train a 10% sample of the original dataset. Without resource limitations, I would love to train on the full dataset. Preliminary tests showed that the bigger the training size, the lower the RMSE. 
+* Due to RAM constraints, I had to train a 10% sample of the original dataset. Without resource limitations, I would pursue training on the full dataset. Preliminary tests showed that the bigger the training size, the lower the RMSE. 
 
 ## 8. Credits
 
