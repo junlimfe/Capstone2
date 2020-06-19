@@ -70,13 +70,16 @@ There are two main types of regression models:
 
 3. **Random Forest Regressor XGboost:**
 
-4. **SVM:**
-
 **WINNER:Random Forest Regression** 
 
 I chose Random Forest Regressor to accomodate the nonlinear nature of the dataset.
 
 #### 6.2. Model Evaluation Metrics
+
+*MAE
+
+*RMSE
+
 >***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors. Thus, the RMSE is useful when large errors are undesirable. The smaller the RMSE, the more accurate the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
 
 
@@ -86,14 +89,14 @@ I chose Random Forest Regressor to accomodate the nonlinear nature of the datase
 
 I chose to work with the GridSearchCV in sklearn model selection package for training my interest rate model. I varied the n_estimators from 100 to 1100 at the interval of 100. In the end, the best parameter for n_estimators is 500. 
 
-###### 6.3.2. Bayesian Optimization
-
-
+###### 6.3.2. Randomized Search Cross Validation
 
 
 ## 7. Future Improvements
 
-* This interest rate model can be further improved by incorporating more qualitative variables that were previously abandoned due to resources constraints. 
+* SVM
+
+* Bayesian Optimization 
 
 * Due to RAM constraints, I had to train a 10% sample of the original dataset. Without resource limitations, I would love to train on the full dataset. Preliminary tests showed that the bigger the training size, the lower the RMSE. 
 
