@@ -93,15 +93,15 @@ I applied GridSearchCV on Random Forest Regressor. Due to the time and resource 
 
 Here I was able to apply a set of parameters to search through. As a result of that, I implemented randomized search cross validation on Random Forest Regressor XGboost with the below parameter set:
 
-   'colsample_bytree':[0.4, 0.6, 0.8]
-   'gamma':[0, 0.03, 0.1, 0.3]
-   'min_child_weight':[1.5, 6, 10]
-   'learning_rate':[0.05, 0.1]
-   'max_depth':[3,5,7]
-   'n_estimators':[500]
-   'reg_alpha':[1e-5, 1e-2,  0.75, 1]
-   'reg_lambda':[1e-5, 1e-2, 0.45, 1, 1.5, 2]
-   'subsample':[0.6, 0.95] 
+  * 'colsample_bytree':[0.4, 0.6, 0.8]
+  * 'gamma':[0, 0.03, 0.1, 0.3]
+  * 'min_child_weight':[1.5, 6, 10]
+  * 'learning_rate':[0.05, 0.1]
+  * 'max_depth':[3,5,7]
+  * 'n_estimators':[500]
+  * 'reg_alpha':[1e-5, 1e-2,  0.75, 1]
+  * 'reg_lambda':[1e-5, 1e-2, 0.45, 1, 1.5, 2]
+  * 'subsample':[0.6, 0.95] 
 
 ## 7. Future Improvements
 
