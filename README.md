@@ -70,7 +70,7 @@ There are two main types of regression models:
 
 3. **Random Forest Regressor XGboost:**
 
-**WINNER:Random Forest Regressor** 
+**WINNER:Random Forest Regressor XGboost** 
 
 I chose Random Forest Regressor XGboost to accomodate the nonlinear nature of the dataset.
 
