@@ -74,22 +74,13 @@ There are two main types of regression models:
 
 I chose Random Forest Regressor XGboost to accomodate the nonlinear nature of the dataset.
 
-#### 6.2. Model Evaluation Metrics
+#### 6.2. Hyperparameter Tuning
 
-*MAE
-
-*RMSE
-
->***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which gives the RMSE a higher weight to large errors. Thus, the RMSE is useful when large errors are undesirable. The smaller the RMSE, the more accurate the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
-
-
-#### 6.3. Hyperparameter Tuning
-
-###### 6.3.1. Grid Search Cross Validation
+###### 6.2.1. Grid Search Cross Validation
 
 I applied GridSearchCV on Random Forest Regressor. Due to the time and resource constraints, I only varied one hyperparameter: n_estimators from 100 to 1100 at the interval of 100. In the end, the best parameter for n_estimators is 500. 
 
-###### 6.3.2. Randomized Search Cross Validation
+###### 6.2.2. Randomized Search Cross Validation
 
 Here I was able to apply a set of parameters to search through. As a result of that, I implemented randomized search cross validation on Random Forest Regressor XGboost with the below parameter set:
 
@@ -102,6 +93,19 @@ Here I was able to apply a set of parameters to search through. As a result of t
   * 'reg_alpha':[1e-5, 1e-2,  0.75, 1]
   * 'reg_lambda':[1e-5, 1e-2, 0.45, 1, 1.5, 2]
   * 'subsample':[0.6, 0.95] 
+
+#### 6.3. Model Evaluation Metrics
+
+*MAE: mean of the absolute value of errors
+
+*RMSE : squared root of the mean of the squared errors.
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+>***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which penalizes large errors more. Thus, the RMSE is more desirable when the large errors are unacceptable. The lower the RMSE, the better the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
 
 ## 7. Future Improvements
 
