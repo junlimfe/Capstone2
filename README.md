@@ -112,7 +112,7 @@ Random Forest Regressor XGB with Randomized Search CV | 1.281564628227814
 
 * SVM: use Kernel Trick along with other hyperparameter tuning to evaluate the accuracy of the model with respect to the aforementioned methods. 
 
-* Bayesian Optimization: compare the efficacy and efficiency using Bayesian Optimizaiton to Randomized Search Cross Validation.
+* Bayesian Optimization: compare the efficacy and efficiency using Bayesian Optimization to Randomized Search Cross Validation.
 
 * Due to RAM constraints, I had to train a 10% sample of the original dataset. Without resource limitations, I would pursue training on the full dataset. Preliminary tests showed that the bigger the training size, the lower the RMSE. 
 
